@@ -6,7 +6,7 @@
                     <h2 class="title">Contact</h2>
 				</div>
 				<form action="">
-				
+
 				<div class="row">
 						<div class="col-md-12">
 							<div class="row">
@@ -29,16 +29,16 @@
 										<input type="submit" class="ghost-button" value="Send Message">
 									</div>
 								</div>
-								
+
 							</div>
 						</div>
-						
+
 					</div>		
-			
+
 				</form>
 
 				<div class="col-md-4 mt-5 contact_all">
-				
+
 					<div class="data_contact">
 						<h4 class="contact_h4">Mis datos</h4>
 						<div>
@@ -66,7 +66,7 @@
 									<i class="fab fa-whatsapp"></i>
 								</div>
 								<div class="fh5co-text">
-									
+
 									<a href="https://wa.me/1126358323" target="_blank"><p class="contact_p">wsp</p></a>
 								</div>
 							</div>
@@ -76,7 +76,7 @@
 
 
 				</div>
-			
+
 		</div>
     </div>
 </template>
@@ -131,7 +131,6 @@
  margin-left:.4em ;
  border-radius: .2em;
  box-sizing: content-box;
-
 }
 .row{
 	margin:0;
@@ -156,8 +155,6 @@
 .contact_h4{
 	color: #fff;
 }
-
-
 @media screen and (max-width: 800px){
 	#fh5co-main{
 		width: 100%;
@@ -176,5 +173,4 @@
 		margin-left: 0%;
 	}
 }
-
-</style>
+</style> 

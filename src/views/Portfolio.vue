@@ -1,24 +1,24 @@
 <template>
-    <div class="hola">
+ <div class="hola">
       <div id="fh5co-main">
 			<div class="fh5co-narrow-content">
 
 				<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Mi portafolio</h2>
 				<div class="row row-bottom-padded-md">
 
-				<div class="col-md-3 col-sm-6 col-padding text-center animate-box" @click.prevent="currentpage($event)">
+				<div class="col-md-3 col-sm-6 col-padding text-center animate-box" >
 					<a href="#" class="work image-popup">
-						<div class="desc" >
+						<div class="desc img1" @click.prevent="currentpage($event)" >
 						<h3 >Proyectos FrontMentor.io</h3>
 						<span>Illustration</span>
 					</div>
 				</a>
 			</div>
 
-			<div class="col-md-3 col-sm-6 col-padding text-center animate-box" @click.prevent="currentpage($event)">
+			<div class="col-md-3 col-sm-6 col-padding text-center animate-box" >
 				<a href="#" class="work image-popup" >
-					<div class="desc">
-						<h3>Project Laravel/Vue</h3>
+					<div class="desc img2" @click.prevent="currentpage($event)">
+						<h3>Este Proyecto</h3>
 						<span>Illustration</span>
 					</div>
 				</a>
@@ -53,10 +53,17 @@
 
           <div id="modals" :class="{modals:modals}">
             <div class="modalss">
-              <div class="modalsss">
+              <div class="modalsss" v-if="img1">
                 <span class="close" @click="modals_close">&times;</span>
                 <h4>Practicas en FrontMentor.io</h4>
                   <img src="../assets/images/modal_img01.jpg" alt="" srcset="">
+                  <a href="#"><button href="#" class="ghost-button">Prueba la pagina</button></a>
+                 <a href="#"> <button class="ghost-button">GitHub repositorio</button> </a> 
+              </div>
+              <div class="modalsss" v-if="img2">
+                <span class="close" @click="modals_close">&times;</span>
+                <h4>Practicas en FrontMentor.io</h4>
+                  <img src="../assets/images/img2.png" alt="" srcset="">
                   <a href="#"><button href="#" class="ghost-button">Prueba la pagina</button></a>
                  <a href="#"> <button class="ghost-button">GitHub repositorio</button> </a> 
               </div>
@@ -74,23 +81,44 @@ export default {
   data() {
     return {
       modals:true,
+      img1:false,
+      img2:false,
       data: "hola"
     }
   },
   methods: {
     currentpage(e){
+      
+      switch (e.currentTarget.className) {
+        case 'desc img1':
+          console.log('work')
+          this.img1 = true
+          break;
+        
+        case 'desc img2':
+          console.log('work')
+          this.img2 = true
+          break;
+      
+        default:
+          break;
+      }
+
+     
+
       this.modals = false
       console.log(e.currentTarget.className)
       return this.data;
     },
     modals_close(){
       this.modals = true
+      this.img1 = false
+      this.img2 = false
     }
   },
 }
 </script>
 <style scoped>
-
 .modals {
   display: none;
 }
@@ -130,7 +158,6 @@ export default {
   z-index: 999;
   margin-top: 0;
 }
-
 #fh5co-main {
   width: 80%;
   float: right;
@@ -168,8 +195,16 @@ export default {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
+   background-repeat: no-repeat;
 }
-
+.work .img1{
+  background-image:url(../assets/images/modal_img01.jpg);
+   background-size: 33em;
+}
+.work .img2{
+  background-image:url(../assets/images/img2.png);
+  background-size: 33em;
+}
 .work .desc h3 {
   font-size: 14px;
   -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
@@ -187,7 +222,6 @@ export default {
   -webkit-transform: translate3d(0, 15px, 0);
   transform: translate3d(0, 15px, 0);
 }
-
 .work:hover .desc {
   opacity: 1;
 }
@@ -215,13 +249,11 @@ export default {
   min-width: 120px;
   transition: all .2s ease-in-out;
 }
-
 .ghost-button:hover, .ghost-button:active {
   color:#fff;
   background: #228896;
   transform: scale(1.1);
 }
-
 @media screen and (max-width: 1200px) {
   #fh5co-main {
     width: 70%;
@@ -231,7 +263,6 @@ export default {
   #fh5co-main {
     width: 100%;
   }
-
 }
 @media screen and (max-width: 768px) {
   #fh5co-main .fh5co-narrow-content {
@@ -249,7 +280,7 @@ export default {
     height: 270px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
   
   .work .desc h3 {
     -webkit-transform: translate3d(0, 0, 0);
@@ -260,5 +291,14 @@ export default {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
+  .modalss{
+    width: 100%;
+  }
+  .modalsss{
+    width: 100%;
+    height: 100%;
+    margin-left:0;
+  }
 }
-</style>
+</style> 
+          
