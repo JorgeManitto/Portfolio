@@ -23,13 +23,15 @@
 				</div>
 			</aside>
 		</div>
-          <div class="icon_hamburger" @click="hamburger" :class="{click_hamburger_closes:links}">
+          <div>
+            <div class="icon_hamburger" @click="hamburger" :class="{click_hamburger_closes:links}">
               <i class="fa fa-bars"></i>
             </div>
 
             <div class="icon_hamburger" @click="hamburger_close" :class="{click_hamburger_closes:close_links}" >
               <i class="fa fa-bars"></i>
             </div>
+          </div>
 
     <nav class="hamburger"  :class="{click_hamburger:links}">
 
@@ -240,9 +242,10 @@ export default {
 }
 .hamburger,.icon_hamburger{
   display: none;
+  
 }
 .nav_links{
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   background: #228896;
@@ -268,6 +271,7 @@ export default {
 .hamburger{
   display: none;
   text-align: left;
+  
 }
 .icon_hamburger {
   display: block;
@@ -275,6 +279,7 @@ export default {
   margin-top: 1em;
   text-align: left;
   cursor: pointer;
+  width: 8%;
 }
 .icon_hamburger i{
   font-size: 2em;

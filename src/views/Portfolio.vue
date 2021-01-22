@@ -10,7 +10,7 @@
 					<a href="#" class="work image-popup">
 						<div class="desc img1" @click.prevent="currentpage($event)" >
 						<h3 >Proyectos FrontMentor.io</h3>
-						<span>Illustration</span>
+						<span>VER</span>
 					</div>
 				</a>
 			</div>
@@ -19,7 +19,7 @@
 				<a href="#" class="work image-popup" >
 					<div class="desc img2" @click.prevent="currentpage($event)">
 						<h3>Este Proyecto</h3>
-						<span>Illustration</span>
+						<span>VER</span>
 					</div>
 				</a>
 			</div>
@@ -57,12 +57,12 @@
                 <span class="close" @click="modals_close">&times;</span>
                 <h4>Practicas en FrontMentor.io</h4>
                   <img src="../assets/images/modal_img01.jpg" alt="" srcset="">
-                  <a href="#"><button href="#" class="ghost-button">Prueba la pagina</button></a>
+                  <a href="https://www.frontendmentor.io/profile/JorgeManitto/solutions" target="blank"><button href="#" class="ghost-button">Prueba la pagina</button></a>
                  <a href="#"> <button class="ghost-button">GitHub repositorio</button> </a> 
               </div>
               <div class="modalsss" v-if="img2">
                 <span class="close" @click="modals_close">&times;</span>
-                <h4>Practicas en FrontMentor.io</h4>
+                <h4>Este proyecto</h4>
                   <img src="../assets/images/img2.png" alt="" srcset="">
                   <a href="#"><button href="#" class="ghost-button">Prueba la pagina</button></a>
                  <a href="#"> <button class="ghost-button">GitHub repositorio</button> </a> 
@@ -206,12 +206,13 @@ export default {
   background-size: 33em;
 }
 .work .desc h3 {
-  font-size: 14px;
+  font-size: 16px;
   -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
   transition: transform 0.3s, opacity 0.3s;
   -webkit-transform: translate3d(0, -15px, 0);
   transform: translate3d(0, -15px, 0);
-  color: #fff;
+  color: #000;
+  font-weight: 600;
 }
 .work .desc span {
   display: block;
@@ -281,18 +282,23 @@ export default {
   }
 }
 @media screen and (max-width: 800px) {
-  
+  .work .desc{
+opacity: 1;
+  }
   .work .desc h3 {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
-    color: #fff;
+    color: #000;
+    
   }
   .work .desc span {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+    color: #000;
   }
   .modalss{
     width: 100%;
+    position:fixed;
   }
   .modalsss{
     width: 100%;
