@@ -5,7 +5,7 @@
           <h2 class="title">Bienvenido a mi portafolio</h2>
           <div class="data">
             <h3 class="sub_title">Soy Jorge Manitto, desarrollador web fullstack</h3>
-          <p class="paragraph"> <code>HTML</code> - <code>CSS</code> - <code>JavaScript</code> - <code>PHP</code> - <code>Mysql</code> - <code>Laravel</code> - <code>VueJS</code> - <code>Sass</code> - <code>Bootstrap</code></p>
+          <p class="paragraph"> <code>HTML</code> - <code>CSS</code> - <code>JavaScript</code> - <code>PHP</code> - <code>Mysql</code> - <code>Laravel</code> - <code>VueJS</code> - <code>Sass</code> - <code>Bootstrap</code> - <code>GIT</code></p>
           </div>
 
           <h2 class="my_works">Mis trabajos</h2>
@@ -33,8 +33,10 @@ export default {
   justify-content: right;
 }
 .demo{
-  width: 42%;
+  margin-left: 20%;
+  float: right;
   background-color: #228896;
+  height: 100vh;
 }
 .title{
   color: white;
@@ -45,7 +47,7 @@ export default {
 .img_home_background{
   object-fit: cover;
   width: 38%;
-  height: 102vh;
+  height:  100vh;
 }
 .data{
   width: 60%;
@@ -58,7 +60,6 @@ export default {
 }
 .sub_title,.paragraph{
   color: #fff;
-  
 }.my_works{
   margin-top: 1em;
   color: #fff;
@@ -85,6 +86,12 @@ export default {
   border-radius: .5em;
   font-size: 1.2em;
   padding: 1px;
+   transition: all .2s ease-in-out; 
+}
+.paragraph code:hover{
+ background-color: rgba(255, 255,255, .5);
+ color: #000;
+ 
 }
 .ghost-button {
   cursor: pointer;

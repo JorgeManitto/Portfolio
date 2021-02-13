@@ -44,8 +44,8 @@
 
             <div class="col-md-3 col-sm-6 col-padding text-center animate-box" @click.prevent="currentpage($event)">
 				<a href="#" class="work image-popup" >
-					<div class="desc">
-						<h3>Project Juego de Cartas</h3>
+					<div class="desc img5"  @click.prevent="currentpage($event)">
+						<h3>PHP/MYSQL/AJAX</h3>
 						<span>Illustration</span>
 					</div>
 				</a>
@@ -79,6 +79,12 @@
                   <img src="../assets/images/img4.jpg" class="img_modal">
                  <a href="#"> <button class="ghost-button">GitHub repositorio</button> </a> 
               </div>
+               <div class="modalsss" v-if="img5">
+                <span class="close" @click="modals_close">&times;</span>
+                <h4>Tareas AJAX</h4>
+                  <img src="../assets/images/img5.jpg" class="img_modal">
+                 <a href="#"> <button class="ghost-button">GitHub repositorio</button> </a> 
+              </div>
             </div>
           </div>
 				</div>
@@ -97,7 +103,7 @@ export default {
       img2:false,
       img3:false,
       img4:false,
-      data: "hola"
+      img5:false,
     }
   },
   methods: {
@@ -122,7 +128,11 @@ export default {
       case 'desc img4':
          
           this.img4 = true
-          break;      
+          break;
+      case 'desc img5':
+         
+          this.img5 = true
+          break;           
 
         default:
           break;
@@ -137,6 +147,7 @@ export default {
       this.img2 = false
       this.img3 = false
       this.img4 = false
+      this.img5 = false
     }
   },
 }
@@ -215,7 +226,6 @@ export default {
   vertical-align: middle;
   height: 270px;
   background-image:url(../assets/images/img-4.jpg);
-  opacity: .8;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
@@ -237,7 +247,11 @@ export default {
   background-image:url(../assets/images/img4.jpg);
   background-size: 33em;
 }
-
+.work .img5{
+  background-image:url(../assets/images/img5.jpg);
+  background-size: 33em;
+ 
+}
 .work .desc h3 {
   font-size: 16px;
   -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
@@ -249,7 +263,7 @@ export default {
 }
 .work .desc span {
   display: block;
-  color: #999999;
+  color: #000;
   font-size: 12px;
   -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
   transition: transform 0.3s, opacity 0.3s;
