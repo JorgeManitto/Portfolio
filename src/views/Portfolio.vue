@@ -1,23 +1,21 @@
 <template>
- <div class="hola">
+ <div class="">
       <div id="fh5co-main">
 			<div class="fh5co-narrow-content">
 
-				<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Mi portafolio</h2>
+				<h2 class="fh5co-heading" data-animate-effect="fadeInLeft">Mi portafolio</h2>
 				<div class="row row-bottom-padded-md">
-
 				<div class="col-md-3 col-sm-6 col-padding text-center animate-box" >
 					<a href="#" class="work image-popup">
-						<div class="desc img1" @click.prevent="currentpage($event)" >
+						<div class="desc img1" @click="isModalOpen = true" >
 						<h3 >Proyectos FrontMentor.io</h3>
 						<span>VER</span>
 					</div>
 				</a>
 			</div>
-
 			<div class="col-md-3 col-sm-6 col-padding text-center animate-box" >
 				<a href="#" class="work image-popup" >
-					<div class="desc img2" @click.prevent="currentpage($event)">
+					<div class="desc img2" @click="isModalOpen2 = true">
 						<h3>SPA PORTFOLIO</h3>
 						<span>VER</span>
 					</div>
@@ -26,7 +24,7 @@
 
             <div class="col-md-3 col-sm-6 col-padding text-center animate-box" >
 				<a href="#" class="work image-popup" >
-					<div class="desc img3" @click.prevent="currentpage($event)">
+					<div class="desc img3" @click="isModalOpen3 = true">
 						<h3>LARAVEL/MYSQL</h3>
 						<span>VER</span>
 					</div>
@@ -35,7 +33,7 @@
 
             <div class="col-md-3 col-sm-6 col-padding text-center animate-box" >
 				<a href="#" class="work image-popup" >
-					<div class="desc img4" @click.prevent="currentpage($event)">
+					<div class="desc img4" @click="isModalOpen4 = true">
 						<h3>PHP/MYSQL</h3>
 						<span>VER</span>
 					</div>
@@ -44,49 +42,60 @@
 
             <div class="col-md-3 col-sm-6 col-padding text-center animate-box" @click.prevent="currentpage($event)">
 				<a href="#" class="work image-popup" >
-					<div class="desc img5"  @click.prevent="currentpage($event)">
+					<div class="desc img5"  @click="isModalOpen5 = true">
 						<h3>PHP/MYSQL/AJAX</h3>
 						<span>Illustration</span>
 					</div>
 				</a>
 			</div>
 
-          <div id="modals" :class="{modals:modals}">
+          <modal v-if="isModalOpen" @close='isModalOpen= false'>
+              <template v-slot:title>
+                  Proyecto front
+              </template>
+              <frame><img src="../assets/images/modal_img01.jpg" alt="" srcset=""> </frame>
+              <template v-slot:content>
+                 <a href="https://www.frontendmentor.io/profile/JorgeManitto/solutions" target="blank"><button href="#" class="ghost-button">Prueba la pagina</button></a>
+                 <a href="#"> <button class="ghost-button">GitHub repositorio</button> </a>
+              </template>
+          </modal>
+         <modal v-if="isModalOpen2" @close='isModalOpen2= false'>
+              <template v-slot:title>
+                  SPA Portfolio
+              </template>
+              <frame><img src="../assets/images/img2.png" alt="" srcset=""> </frame>
+              <template v-slot:content>
+                 <a href="https://github.com/JorgeManitto/Portfolio" target="_blank"> <button class="ghost-button">GitHub repositorio</button> </a> 
+              </template>
+          </modal>
+           <modal v-if="isModalOpen3" @close='isModalOpen3= false'>
+              <template v-slot:title>
+                  Roles y Permisos en Laravel
+              </template>
+              <frame><img src="../assets/images/img3.png"></frame>
+              <template v-slot:content>
+                 <a href="#"> <button class="ghost-button">GitHub repositorio</button> </a> 
+              </template>
+          </modal>
+           <modal v-if="isModalOpen4" @close='isModalOpen4= false'>
+              <template v-slot:title>
+                  PHP Y MYSQL
+              </template>
+              <frame><img src="../assets/images/img4.jpg" class="img_modal"></frame>
+              <template v-slot:content>
+                 <a href="#"> <button class="ghost-button">GitHub repositorio</button> </a> 
+              </template>
+          </modal>
+           <modal v-if="isModalOpen5" @close='isModalOpen5= false'>
+              <template v-slot:title>
+                 Tareas AJAX
+              </template>
+              <frame><img src="../assets/images/img5.jpg" class="img_modal"></frame>
+              <template v-slot:content>
+                 <a href="#"> <button class="ghost-button">GitHub repositorio</button> </a> 
+              </template>
+          </modal>
 
-            <div class="modalss">
-              <div class="modalsss" v-if="img1">
-                <span class="close" @click="modals_close">&times;</span>
-                <h4>Practicas en FrontMentor.io </h4>       
-                  <img src="../assets/images/modal_img01.jpg" alt="" srcset="">
-                  <a href="https://www.frontendmentor.io/profile/JorgeManitto/solutions" target="blank"><button href="#" class="ghost-button">Prueba la pagina</button></a>
-                 <a href="#"> <button class="ghost-button">GitHub repositorio</button> </a> 
-              </div>
-              <div class="modalsss" v-if="img2">
-                <span class="close" @click="modals_close">&times;</span>
-                <h4>SPA Portfolio</h4>
-                  <img src="../assets/images/img2.png" alt="" srcset="">
-                 <a href="#"> <button class="ghost-button">GitHub repositorio</button> </a> 
-              </div>
-              <div class="modalsss" v-if="img3">
-                <span class="close" @click="modals_close">&times;</span>
-                <h4>Roles y Permisos en Laravel</h4>
-                  <img src="../assets/images/img3.png" alt="" srcset="">
-                 <a href="#"> <button class="ghost-button">GitHub repositorio</button> </a> 
-              </div>
-              <div class="modalsss" v-if="img4">
-                <span class="close" @click="modals_close">&times;</span>
-                <h4>PHP Y MYSQL</h4>
-                  <img src="../assets/images/img4.jpg" class="img_modal">
-                 <a href="#"> <button class="ghost-button">GitHub repositorio</button> </a> 
-              </div>
-               <div class="modalsss" v-if="img5">
-                <span class="close" @click="modals_close">&times;</span>
-                <h4>Tareas AJAX</h4>
-                  <img src="../assets/images/img5.jpg" class="img_modal">
-                 <a href="#"> <button class="ghost-button">GitHub repositorio</button> </a> 
-              </div>
-            </div>
-          </div>
 				</div>
 			</div>
             <router-link to="/Contact"><button class="ghost-button">Contact</button></router-link>
@@ -95,61 +104,19 @@
 </template>
 
 <script>
+import modal from '../components/modal';
+import {ref} from 'vue'
 export default {
-  data() {
-    return {
-      modals:true,
-      img1:false,
-      img2:false,
-      img3:false,
-      img4:false,
-      img5:false,
-    }
-  },
-  methods: {
-    currentpage(e){
-      
-      switch (e.currentTarget.className) {
-        case 'desc img1':
-          
-          this.img1 = true
-          break;
-        
-        case 'desc img2':
-         
-          this.img2 = true
-          break;
-      
-      case 'desc img3':
-         
-          this.img3 = true
-          break;
-
-      case 'desc img4':
-         
-          this.img4 = true
-          break;
-      case 'desc img5':
-         
-          this.img5 = true
-          break;           
-
-        default:
-          break;
-      }
-
-      this.modals = false
-      return this.data;
+  components :{modal},
+   setup() {
+        const isModalOpen = ref (false);
+        const isModalOpen2 = ref (false);
+        const isModalOpen3 = ref (false);
+        const isModalOpen4 = ref (false);
+        const isModalOpen5 = ref (false);
+        return {isModalOpen,isModalOpen2,isModalOpen3,isModalOpen4,isModalOpen5,}
     },
-    modals_close(){
-      this.modals = true
-      this.img1 = false
-      this.img2 = false
-      this.img3 = false
-      this.img4 = false
-      this.img5 = false
-    }
-  },
+ 
 }
 </script>
 <style scoped>
@@ -198,7 +165,7 @@ export default {
   float: right;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
-  transition: 0.5s;
+  transition: 0.5s; 
 }
 #fh5co-main .fh5co-narrow-content {
   position: relative;
@@ -230,10 +197,12 @@ export default {
   -o-transition: 0.3s;
   transition: 0.3s;
    background-repeat: no-repeat;
+
 }
 .work .img1{
   background-image:url(../assets/images/modal_img01.jpg);
    background-size: 33em;
+
 }
 .work .img2{
   background-image:url(../assets/images/img2.png);
