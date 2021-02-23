@@ -13,6 +13,14 @@
 					</div>
 				</a>
 			</div>
+         <div class="col-md-3 col-sm-6 col-padding text-center animate-box">
+				<a href="#" class="work image-popup" >
+					<div class="desc img6"  @click="isModalOpen6 = true">
+						<h3>Laravel/VueJS/MYSQL/AJAX/API</h3>
+						<span>Ver</span>
+					</div>
+				</a>
+			</div>
 			<div class="col-md-3 col-sm-6 col-padding text-center animate-box" >
 				<a href="#" class="work image-popup" >
 					<div class="desc img2" @click="isModalOpen2 = true">
@@ -44,10 +52,11 @@
 				<a href="#" class="work image-popup" >
 					<div class="desc img5"  @click="isModalOpen5 = true">
 						<h3>PHP/MYSQL/AJAX</h3>
-						<span>Illustration</span>
+						<span>Ver</span>
 					</div>
 				</a>
 			</div>
+     
 
           <modal v-if="isModalOpen" @close='isModalOpen= false'>
               <template v-slot:title>
@@ -123,7 +132,22 @@
                  <a href="https://github.com/JorgeManitto/Todo-list-Ajax" target="_blank"> <button class="ghost-button">GitHub repositorio</button> </a> 
               </template>
           </modal>
-
+            <modal v-if="isModalOpen6" @close='isModalOpen6= false'>
+              <template v-slot:title>
+                 Autos Clasicos
+              </template>
+              <template v-slot:img><img src="../assets/images/img6.jpg" class="img_modal"></template>
+              <template v-slot:about>
+                <h4>Tecnologias</h4>
+                <code>Laravel</code><br>
+                <code>VueJs</code><br>
+                <code>MySql</code><br>
+                <code>AJAX</code><br>
+              </template>
+              <template v-slot:content>
+                 <a href="https://github.com/JorgeManitto/" target="_blank"> <button class="ghost-button">GitHub repositorio</button> </a> 
+              </template>
+          </modal>
 				</div>
 			</div>
             <router-link to="/Contact"><button class="ghost-button">Contact</button></router-link>
@@ -142,7 +166,8 @@ export default {
         const isModalOpen3 = ref (false);
         const isModalOpen4 = ref (false);
         const isModalOpen5 = ref (false);
-        return {isModalOpen,isModalOpen2,isModalOpen3,isModalOpen4,isModalOpen5,}
+        const isModalOpen6 = ref (false);
+        return {isModalOpen,isModalOpen2,isModalOpen3,isModalOpen4,isModalOpen5,isModalOpen6,}
     },
  
 }
@@ -247,7 +272,10 @@ export default {
 .work .img5{
   background-image:url(../assets/images/img5.jpg);
   background-size: 33em;
- 
+}
+.work .img6{
+  background-image:url(../assets/images/img6.jpg);
+  background-size: 33em;
 }
 .work .desc h3 {
   font-size: 16px;
