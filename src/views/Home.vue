@@ -5,7 +5,7 @@
           <h2 class="title">Bienvenido a mi portafolio</h2>
           <div class="data">
             <h3 class="sub_title">Soy Jorge Manitto, desarrollador web fullstack</h3>
-          <p class="paragraph"> <code>HTML</code> - <code>CSS</code> - <code>JavaScript</code> - <code>PHP</code> - <code>Mysql</code> - <code>Laravel</code> - <code>VueJS</code> - <code>Sass</code> - <code>Bootstrap</code> - <code>GIT</code></p>
+          <p class="paragraph"> <code>HTML</code> - <code>CSS</code> - <code>JavaScript</code> - <code>PHP</code> - <code>Mysql</code> - <code>Laravel</code> - <code>VueJS</code> - <code>Sass</code>- <code>Tailwind</code> - <code>Bootstrap</code> - <code>GIT</code></p>
           </div>
 
           <h2 class="my_works">Mis trabajos</h2>
@@ -121,6 +121,7 @@ export default {
 }
 .demo{
   width: 100%;
+  height: 100%;
   padding-top: 3.8em;
 }
 .title{
@@ -131,7 +132,7 @@ export default {
   height: 20vh;
 }
   .data{
-    width: 80%;
+    width: 100%;
   }
 }
 </style> 

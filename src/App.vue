@@ -34,12 +34,13 @@
           </div>
 
     <nav class="hamburger"  :class="{click_hamburger:links}">
-
-          <ul class="nav_links">
+          <transition  name="fade">
+            <ul v-if="links" class="nav_links">
 						<li @click="hamburger_close"><router-link to="/"><button class="btn_nav_links">Home</button></router-link></li>
 						<li @click="hamburger_close"><router-link to="/portfolio" ><button class="btn_nav_links"> Portfolio</button></router-link></li>
 						<li @click="hamburger_close"><router-link to="/Contact"><button class="btn_nav_links">Contact</button></router-link></li>
 					</ul>
+          </transition>
         </nav>
 
   <router-view></router-view>
@@ -275,7 +276,6 @@ export default {
 .hamburger{
   display: none;
   text-align: left;
-  
 }
 .icon_hamburger {
   display: block;
@@ -308,4 +308,17 @@ export default {
   display: block;
 }
 
+.fade-enter-active, .fade-leave-active{
+  transition: all 1s ease;
+  
+}
+.fade-enter-from{
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: .7;
+    transform: translateX(100%);
+} 
 </style>

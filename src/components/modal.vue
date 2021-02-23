@@ -3,12 +3,11 @@
        </div>
               <div class="modalsss" style="overflow: hidden;" >
                 <span class="close" @click="close()">&times;</span>
-                <h4> <slot name="title"></slot> </h4>       
-                    <slot></slot>
+                <h2> <slot name="title"></slot> </h2>       
+                    <slot name="img"></slot>
+                    <p><slot name="about"></slot></p>
                     <slot name="content"></slot> 
-              </div>
-          
-            
+              </div>     
 </template>
 <script>
 export default {
@@ -16,7 +15,6 @@ export default {
         function close() {
             emit("close");
         }
-
         return {close}
     }
 }
@@ -33,7 +31,7 @@ export default {
 .modalsss{
   width: 60vw;
   position: absolute;
-  height: 80vh;
+  height: 90vh;
   background: #fff;
   margin-top: 0%;
   margin-left: 10%;
@@ -61,18 +59,17 @@ export default {
   transform: scale(1.4);
 }
 @media screen and (max-width: 800px) {
- 
   .modalss{
     width: 100%;
     position:fixed;
     margin-top: 2em;
   }
   .modalsss{
+    position:fixed;
     width: 100%;
-    height: 100%;
+    height: auto;
     margin-left:0;
-    
   }
- 
+
 }
 </style>

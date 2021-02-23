@@ -40,7 +40,7 @@
 				</a>
 			</div>
 
-            <div class="col-md-3 col-sm-6 col-padding text-center animate-box" @click.prevent="currentpage($event)">
+            <div class="col-md-3 col-sm-6 col-padding text-center animate-box">
 				<a href="#" class="work image-popup" >
 					<div class="desc img5"  @click="isModalOpen5 = true">
 						<h3>PHP/MYSQL/AJAX</h3>
@@ -53,17 +53,29 @@
               <template v-slot:title>
                   Proyecto front
               </template>
-              <frame><img src="../assets/images/modal_img01.jpg" alt="" srcset=""> </frame>
+              <template v-slot:img><img src="../assets/images/modal_img01.jpg" alt="" srcset=""> </template>
               <template v-slot:content>
                  <a href="https://www.frontendmentor.io/profile/JorgeManitto/solutions" target="blank"><button href="#" class="ghost-button">Prueba la pagina</button></a>
-                 <a href="#"> <button class="ghost-button">GitHub repositorio</button> </a>
+                 <a href="https://github.com/JorgeManitto/Social-media-dashboard" target="_blank"> <button class="ghost-button">GitHub repositorio</button> </a>
+              </template>
+              <template v-slot:about>
+                  <h4>Practicas de la pagina frontendmentor:</h4>
+                  <code>Launch countdown timer</code><br>
+                  <code>Rest-api-country</code><br>
+                  <code>Base-apparel-coming-soon</code><br>
+                  <code>Social-media-dashboard</code><br>
               </template>
           </modal>
          <modal v-if="isModalOpen2" @close='isModalOpen2= false'>
               <template v-slot:title>
-                  SPA Portfolio
+                  Portfolio
               </template>
-              <frame><img src="../assets/images/img2.png" alt="" srcset=""> </frame>
+              <template v-slot:img><img src="../assets/images/img2.png" alt="" srcset=""> </template>
+              <template v-slot:about>
+                <h4>Este mismo Portafolio</h4>
+                <code>Vue</code><br>
+                <code>VueRouter</code>
+              </template>
               <template v-slot:content>
                  <a href="https://github.com/JorgeManitto/Portfolio" target="_blank"> <button class="ghost-button">GitHub repositorio</button> </a> 
               </template>
@@ -72,27 +84,43 @@
               <template v-slot:title>
                   Roles y Permisos en Laravel
               </template>
-              <frame><img src="../assets/images/img3.png"></frame>
+              <template v-slot:img><img src="../assets/images/img3.png"></template>
+              <template v-slot:about>
+                <h4>Aplicacion Publicaciones</h4>
+                <code>Laravel</code><br>
+                <code>MySql</code><br>
+              </template>
               <template v-slot:content>
-                 <a href="#"> <button class="ghost-button">GitHub repositorio</button> </a> 
+                 <a href="https://github.com/JorgeManitto/Roles-permisos-y-crud" target="_blank"> <button class="ghost-button">GitHub repositorio</button> </a> 
               </template>
           </modal>
            <modal v-if="isModalOpen4" @close='isModalOpen4= false'>
               <template v-slot:title>
                   PHP Y MYSQL
               </template>
-              <frame><img src="../assets/images/img4.jpg" class="img_modal"></frame>
+              <template v-slot:img><img src="../assets/images/img4.jpg" class="img_modal"></template>
+              <template v-slot:about>
+                <h4>Encuesta de lenguajes</h4>
+                <code>PHP</code><br>
+                <code>MySql</code><br>
+              </template>
               <template v-slot:content>
-                 <a href="#"> <button class="ghost-button">GitHub repositorio</button> </a> 
+                 <a href="https://github.com/JorgeManitto/encuesta-php" target="_blank"> <button class="ghost-button">GitHub repositorio</button> </a> 
               </template>
           </modal>
            <modal v-if="isModalOpen5" @close='isModalOpen5= false'>
               <template v-slot:title>
                  Tareas AJAX
               </template>
-              <frame><img src="../assets/images/img5.jpg" class="img_modal"></frame>
+              <template v-slot:img><img src="../assets/images/img5.jpg" class="img_modal"></template>
+              <template v-slot:about>
+                <h4>Lista de Tareas</h4>
+                <code>PHP</code><br>
+                <code>MySql</code><br>
+                <code>AJAX</code><br>
+              </template>
               <template v-slot:content>
-                 <a href="#"> <button class="ghost-button">GitHub repositorio</button> </a> 
+                 <a href="https://github.com/JorgeManitto/Todo-list-Ajax" target="_blank"> <button class="ghost-button">GitHub repositorio</button> </a> 
               </template>
           </modal>
 
@@ -155,7 +183,7 @@ export default {
 }
 .modalsss img{
   width:100%;
-  height: 500px;
+  height: 440px;
   object-fit: cover;
   z-index: 999;
   margin-top: 0;
@@ -250,6 +278,7 @@ export default {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
+
 .ghost-button {
   cursor: pointer;
   color:  #228896;
@@ -315,15 +344,19 @@ opacity: 1;
   }
   .modalss{
     width: 100%;
-    position:fixed;
+    
     margin-top: 2em;
   }
   .modalsss{
     width: 100%;
+    position:fixed;
     height: 100%;
     margin-left:0;
   }
- 
+   .modalsss img{
+     height: 200px;
+   object-fit: contain;
+ }
 }
 </style> 
           
