@@ -15,10 +15,10 @@
 
 				<div class="fh5co-footer">
 					<ul>
-						<li><a href="https://www.facebook.com/jorgemanitto8" target=" blank"><i class="fab fa-facebook-square"></i></a></li>
-						<li><a href="#" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
-						<li><a href="#" target="_blank"><i class="fab fa-instagram-square"></i></a></li>
-						<li><a href="https://www.linkedin.com/in/jorge-oscar-manitto-a17287202/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+						<li class="animated-i"><a href="#" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
+						<li class="animated-i"><a href="https://www.facebook.com/jorgemanitto8" target=" blank"><i class="fab fa-facebook-square"></i></a></li>
+						<li class="animated-i"><a href="#" target="_blank"><i class="fab fa-instagram-square"></i></a></li>
+						<li class="animated-i"><a href="https://www.linkedin.com/in/jorge-oscar-manitto-a17287202/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
 					</ul>
 				</div>
 			</aside>

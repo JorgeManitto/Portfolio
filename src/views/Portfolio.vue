@@ -5,7 +5,7 @@
 
 				<h2 class="fh5co-heading" data-animate-effect="fadeInLeft">Mi portafolio</h2>
 				<div class="row row-bottom-padded-md">
-				<div class="col-md-3 col-sm-6 col-padding text-center animate-box" >
+			<div class="col-md-3 col-sm-6 col-padding text-center animate-box" >
 					<a href="#" class="work image-popup">
 						<div class="desc img1" @click="isModalOpen = true" >
 						<h3 >Proyectos FrontMentor.io</h3>
@@ -30,7 +30,7 @@
 				</a>
 			</div>
 
-            <div class="col-md-3 col-sm-6 col-padding text-center animate-box" >
+      <div class="col-md-3 col-sm-6 col-padding text-center animate-box" >
 				<a href="#" class="work image-popup" >
 					<div class="desc img3" @click="isModalOpen3 = true">
 						<h3>LARAVEL/MYSQL</h3>
@@ -39,7 +39,7 @@
 				</a>
 			</div>
 
-            <div class="col-md-3 col-sm-6 col-padding text-center animate-box" >
+      <div class="col-md-3 col-sm-6 col-padding text-center animate-box" >
 				<a href="#" class="work image-popup" >
 					<div class="desc img4" @click="isModalOpen4 = true">
 						<h3>PHP/MYSQL</h3>
@@ -48,17 +48,17 @@
 				</a>
 			</div>
 
-            <div class="col-md-3 col-sm-6 col-padding text-center animate-box">
+        <div class="col-md-3 col-sm-6 col-padding text-center animate-box">
 				<a href="#" class="work image-popup" >
 					<div class="desc img5"  @click="isModalOpen5 = true">
-						<h3>PHP/MYSQL/AJAX</h3>
+						<h3>Laravel/MYSQL/VUEJS/AP</h3>
 						<span>Ver</span>
 					</div>
 				</a>
 			</div>
      
 
-          <modal v-if="isModalOpen" @close='isModalOpen= false'>
+        <modal v-if="isModalOpen" @close='isModalOpen= false'>
               <template v-slot:title>
                   Proyecto front
               </template>
@@ -74,8 +74,8 @@
                   <code>Base-apparel-coming-soon</code><br>
                   <code>Social-media-dashboard</code><br>
               </template>
-          </modal>
-         <modal v-if="isModalOpen2" @close='isModalOpen2= false'>
+        </modal>
+        <modal v-if="isModalOpen2" @close='isModalOpen2= false'>
               <template v-slot:title>
                   Portfolio
               </template>
@@ -88,7 +88,7 @@
               <template v-slot:content>
                  <a href="https://github.com/JorgeManitto/Portfolio" target="_blank"> <button class="ghost-button">GitHub repositorio</button> </a> 
               </template>
-          </modal>
+        </modal>
            <modal v-if="isModalOpen3" @close='isModalOpen3= false'>
               <template v-slot:title>
                   Roles y Permisos en Laravel
@@ -119,17 +119,18 @@
           </modal>
            <modal v-if="isModalOpen5" @close='isModalOpen5= false'>
               <template v-slot:title>
-                 Tareas AJAX
+                 API TOKENS
               </template>
               <template v-slot:img><img src="../assets/images/img5.jpg" class="img_modal"></template>
               <template v-slot:about>
-                <h4>Lista de Tareas</h4>
-                <code>PHP</code><br>
+                <h4>Sesiones, permisos y roles con tokens</h4>
+                <code>Laravel</code><br>
                 <code>MySql</code><br>
-                <code>AJAX</code><br>
+                <code>Vuejs</code><br>
+                <code>API</code><br>
               </template>
               <template v-slot:content>
-                 <a href="https://github.com/JorgeManitto/Todo-list-Ajax" target="_blank"> <button class="ghost-button">GitHub repositorio</button> </a> 
+                 <a href="https://github.com/JorgeManitto/" target="_blank"> <button class="ghost-button">GitHub repositorio</button> </a> 
               </template>
           </modal>
             <modal v-if="isModalOpen6" @close='isModalOpen6= false'>
@@ -161,7 +162,7 @@ import {ref} from 'vue'
 export default {
   components :{modal},
    setup() {
-        const isModalOpen = ref (false);
+        const isModalOpen  = ref (false);
         const isModalOpen2 = ref (false);
         const isModalOpen3 = ref (false);
         const isModalOpen4 = ref (false);
